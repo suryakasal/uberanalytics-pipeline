@@ -1,0 +1,17 @@
+{
+	"name": "SQL Pool - External - CSV",
+	"properties": {
+		"content": {
+			"query": "CREATE DATABASE SCOPED CREDENTIAL AzureStorageCredential\nWITH IDENTITY = 'datalake1231231',\nSECRET = 'XMMu1B9GH2Redg8ZAgEfALtSKbmIH19bEmufU2I1zkRDcJSaCbiA3edQxO9yTszjtB+V3RL6k7lD+AStzwp4SA=='\n\nCREATE EXTERNAL DATA SOURCE log_data_csv\nWITH ( LOCATION = 'abfss://csv@datalake1231231.dfs.core.windows.net',\n        CREDENTIAL = AzureStorageCredential,\n        TYPE = HADOOP )\n\nCREATE EXTERNAL FILE FORMAT TextFileFormat WITH (\n    FORMAT_TYPE=DELIMITEDTEXT,\n    FORMAT_OPTIONS(\n        FIELD_TERMINATOR=',',\n        FIRST_ROW=2\n    )\n)\n\nDrop EXTERNAL TABLE [logdata]\n\nCREATE EXTERNAL TABLE [logdata]\n(\n    [Correlation id] [varchar](200) NULL,\n    [Operation name] [varchar](200) NULL,\n    [Status] [varchar](100) NULL,\n    [Event category] [varchar](100) NULL,\n    [Level] [varchar](200) NULL,\n    [Time] [varchar](200) NULL,\n    [Subscription] [varchar](200) NULL,\n    [Event initiated by] [varchar](1000) NULL,\n    [Resource type] [varchar](1000) NULL,\n    [Resource group] [varchar](1000) NULL,\n    [Resource] [varchar](2000) NULL\n)\nWITH (\n    LOCATION = '/Log.csv',\n    DATA_SOURCE = log_data_csv,\n    FILE_FORMAT = TextFileFormat\n)\n\nSELECT * FROM [logdata]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "pooldb",
+				"poolName": "pooldb"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

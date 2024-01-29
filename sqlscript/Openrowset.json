@@ -1,0 +1,17 @@
+{
+	"name": "Openrowset",
+	"properties": {
+		"content": {
+			"query": "SELECT * FROM\nOPENROWSET(BULK 'https://datalake1231231.blob.core.windows.net/parquet/*.parquet',\nFORMAT = 'PARQUET') AS [logdata_temp]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "SQL Pool - Table - Parquet",
+	"properties": {
+		"content": {
+			"query": "CREATE TABLE [pool_logdata_parquet]\n(\n    [Correlationid] [varchar](200) NULL,\n    [Operationname] [varchar](200) NULL,\n    [Status] [varchar](100) NULL,\n    [Eventcategory] [varchar](100) NULL,\n    [Level] [varchar](200) NULL,\n    [Time] [varchar](200) NULL,\n    [Subscription] [varchar](200) NULL,\n    [Eventinitiatedby] [varchar](1000) NULL,\n    [Resourcetype] [varchar](1000) NULL,\n    [Resourcegroup] [varchar](1000) NULL,\n    [Resource] [varchar](2000) NULL\n)\n\nCOPY INTO [pool_logdata_parquet] FROM 'https://datalake1231231.blob.core.windows.net/parquet/log.parquet'\nWITH\n (\n    FILE_TYPE = 'PARQUET',\n    CREDENTIAL = (IDENTITY = 'Storage Account Key', SECRET = 'XMMu1B9GH2Redg8ZAgEfALtSKbmIH19bEmufU2I1zkRDcJSaCbiA3edQxO9yTszjtB+V3RL6k7lD+AStzwp4SA==')\n)\n\nSELECT * from [logdata_parquet]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "pooldb",
+				"poolName": "pooldb"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

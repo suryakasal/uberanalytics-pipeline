@@ -1,0 +1,17 @@
+{
+	"name": "Serverless-External-CSV",
+	"properties": {
+		"content": {
+			"query": "CREATE DATABASE [appdb]\n\nCREATE MASTER KEY ENCRYPTION BY PASSWORD = 'Surya1234*'\n\nCREATE DATABASE SCOPED CREDENTIAL SasToken\nWITH IDENTITY = 'SHARED ACCESS SIGNATURE',\nSECRET = 'sv=2022-11-02&ss=b&srt=sco&sp=rwdl&se=2023-12-21T04:24:47Z&st=2023-11-30T20:24:47Z&spr=https&sig=%2B2nC0udVl6M9g45lXvGqc5kJK%2FytM6PhCeD4hFnE6Ao%3D'\n\nCREATE EXTERNAL DATA SOURCE log_data\nWITH ( LOCATION = 'https://datalake1231231.blob.core.windows.net/csv',\n        CREDENTIAL = SasToken )\n\nCREATE EXTERNAL FILE FORMAT TextFileFormat WITH (\n    FORMAT_TYPE=DELIMITEDTEXT,\n    FORMAT_OPTIONS(\n        FIELD_TERMINATOR=',',\n        FIRST_ROW=2\n    )\n)\n\nCREATE EXTERNAL TABLE [logdata]\n(\n    [Correlation id] [varchar](200) NULL,\n    [Operation name] [varchar](200) NULL,\n    [Status] [varchar](100) NULL,\n    [Event category] [varchar](100) NULL,\n    [Level] [varchar](200) NULL,\n    [Time] [datetime] NULL,\n    [Subscription] [varchar](200) NULL,\n    [Event initiated by] [varchar](1000) NULL,\n    [Resource type] [varchar](1000) NULL,\n    [Resource group] [varchar](1000) NULL,\n    [Resource] [varchar](2000) NULL\n)\nWITH (\n    LOCATION = '/Log.csv',\n    DATA_SOURCE = log_data,\n    FILE_FORMAT = TextFileFormat\n)\n\nSELECT * FROM [logdata]\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "appdb",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

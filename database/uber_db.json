@@ -1,0 +1,25 @@
+{
+	"name": "uber_db",
+	"properties": {
+		"Name": "uber_db",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://uberdataset@datalake1231231.dfs.core.windows.net/",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "datalake1231231"
+			}
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 2,
+		"ObjectId": "8d7385d9-04b7-4b63-bd72-6b0a3c547c8f"
+	},
+	"type": "DATABASE"
+}
