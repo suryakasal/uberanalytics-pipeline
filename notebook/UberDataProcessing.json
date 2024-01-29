@@ -21189,7 +21189,7 @@
 					"# Replace with your actual ADLS Gen2 details\r\n",
 					"storage_account_name = \"datalake1231231\"\r\n",
 					"container_name = \"uberdata\"\r\n",
-					"account_key = \"XMMu1B9GH2Redg8ZAgEfALtSKbmIH19bEmufU2I1zkRDcJSaCbiA3edQxO9yTszjtB+V3RL6k7lD+AStzwp4SA==\"\r\n",
+					"account_key = \"XMMu1B9GH2Redg8ZAgEfALtSKbmIH19bEmufU2I1zkRDcJSaCbiA3edQxO9yTszjtB+V3RL6k7lD+kasalAStzwp4SA==\"\r\n",
 					"data_path = f\"abfss://{container_name}@{storage_account_name}.dfs.core.windows.net/uber_data.csv\"\r\n",
 					"\r\n",
 					"# Create a Spark session with configurations for ADLS Gen2\r\n",
@@ -21225,7 +21225,7 @@
 					"# # Replace with your actual ADLS Gen2 details\r\n",
 					"# storage_account_name = \"uberdatadumpsuhas\"\r\n",
 					"# container_name = \"myprojectdata\"\r\n",
-					"# account_key = \"RNiHD3mfO0xdfyyqLz08/QqE+IVeO7tO3b3lXCwLoUK8Lq7RRSk7u5txrnnq4vB4/wl3RPQGbKGM+ASteK5d3w==\"\r\n",
+					"# account_key = \"RNiHD3mfO0xdfyyqLz08/QqE+IVeO7tO3b3lXCwLoUK8Lq7RRSk7u5txrnnq4vB4/wl3RPQGbKGM+kasalASteK5d3w==\"\r\n",
 					"# data_path = f\"abfss://{container_name}@{storage_account_name}.dfs.core.windows.net/uber.csv\"\r\n",
 					"\r\n",
 					"# # Create a Spark session with configurations for ADLS Gen2\r\n",
@@ -21590,7 +21590,7 @@
 					}
 				},
 				"source": [
-					"fact_table.to_csv('abfss://uberdata@datalake1231231.dfs.core.windows.net/outputfiles/fact_table.csv', storage_options={'account_key': 'XMMu1B9GH2Redg8ZAgEfALtSKbmIH19bEmufU2I1zkRDcJSaCbiA3edQxO9yTszjtB+V3RL6k7lD+AStzwp4SA=='})\r\n",
+					"fact_table.to_csv('abfss://uberdata@datalake1231231.dfs.core.windows.net/outputfiles/fact_table.csv', storage_options={'account_key': 'XMMu1B9GH2Redg8ZAgEfALtSKbmIH19bEmufU2I1zkRDcJSaCbiA3edQxO9yTszjtB+V3RL6k7lD+kasalAStzwp4SA=='})\r\n",
 					""
 				],
 				"execution_count": 23
@@ -21609,11 +21609,11 @@
 					}
 				},
 				"source": [
-					"payment_type_dim.to_csv('abfss://uberdata@datalake1231231.dfs.core.windows.net/outputfiles/payment_type_dim.csv', storage_options={'account_key': 'XMMu1B9GH2Redg8ZAgEfALtSKbmIH19bEmufU2I1zkRDcJSaCbiA3edQxO9yTszjtB+V3RL6k7lD+AStzwp4SA=='})\r\n",
-					"dropoff_location_dim.to_csv('abfss://uberdata@datalake1231231.dfs.core.windows.net/outputfiles/dropoff_location_dim.csv', storage_options={'account_key': 'XMMu1B9GH2Redg8ZAgEfALtSKbmIH19bEmufU2I1zkRDcJSaCbiA3edQxO9yTszjtB+V3RL6k7lD+AStzwp4SA=='})\r\n",
-					"pickup_location_dim.to_csv('abfss://uberdata@datalake1231231.dfs.core.windows.net/outputfiles/pickup_location_dim.csv', storage_options={'account_key': 'XMMu1B9GH2Redg8ZAgEfALtSKbmIH19bEmufU2I1zkRDcJSaCbiA3edQxO9yTszjtB+V3RL6k7lD+AStzwp4SA=='})\r\n",
-					"rate_code_dim.to_csv('abfss://uberdata@datalake1231231.dfs.core.windows.net/outputfiles/rate_code_dim.csv', storage_options={'account_key': 'XMMu1B9GH2Redg8ZAgEfALtSKbmIH19bEmufU2I1zkRDcJSaCbiA3edQxO9yTszjtB+V3RL6k7lD+AStzwp4SA=='})\r\n",
-					"datetime_dim.to_csv('abfss://uberdata@datalake1231231.dfs.core.windows.net/outputfiles/datetime_dim.csv', storage_options={'account_key': 'XMMu1B9GH2Redg8ZAgEfALtSKbmIH19bEmufU2I1zkRDcJSaCbiA3edQxO9yTszjtB+V3RL6k7lD+AStzwp4SA=='})"
+					"payment_type_dim.to_csv('abfss://uberdata@datalake1231231.dfs.core.windows.net/outputfiles/payment_type_dim.csv', storage_options={'account_key': 'XMMu1B9GH2Redg8ZAgEfALtSKbmIH19bEmufU2I1zkRDcJSaCbiA3edQxO9yTszjtB+V3RL6k7lD+kasalAStzwp4SA=='})\r\n",
+					"dropoff_location_dim.to_csv('abfss://uberdata@datalake1231231.dfs.core.windows.net/outputfiles/dropoff_location_dim.csv', storage_options={'account_key': 'XMMu1B9GH2Redg8ZAgEfALtSKbmIH19bEmufU2I1zkRDcJSaCbiA3edQxO9yTszjtB+kasalV3RL6k7lD+AStzwp4SA=='})\r\n",
+					"pickup_location_dim.to_csv('abfss://uberdata@datalake1231231.dfs.core.windows.net/outputfiles/pickup_location_dim.csv', storage_options={'account_key': 'XMMu1B9GH2Redg8ZAgEfALtSKbmIH19bEmufU2I1zkRDcJSaCbiA3edQxO9yTszjtB+V3RL6k7lD+kasalAStzwp4SA=='})\r\n",
+					"rate_code_dim.to_csv('abfss://uberdata@datalake1231231.dfs.core.windows.net/outputfiles/rate_code_dim.csv', storage_options={'account_key': 'XMMu1B9GH2Redg8ZAgEfALtSKbmIH19bEmufU2I1zkRDcJSaCbiA3edQxO9yTszjtB+V3RL6k7lD+kasalAStzwp4SA=='})\r\n",
+					"datetime_dim.to_csv('abfss://uberdata@datalake1231231.dfs.core.windows.net/outputfiles/datetime_dim.csv', storage_options={'account_key': 'XMMu1B9GH2Redg8ZAgEfALtSKbmIH19bEmufU2I1zkRDcJSaCbiA3edQxO9yTszjtB+V3RL6k7lD+kasalAStzwp4SA=='})"
 				],
 				"execution_count": 24
 			},
